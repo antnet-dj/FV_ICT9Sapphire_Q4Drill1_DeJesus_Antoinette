@@ -6,40 +6,73 @@
     <title>Q4 Drill 1</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>Electricity Consumption Classifier</h1>
+<style>
+body{
+    background-color:#e6e3d3;
+    text-align:center;
+    padding-top:100px;
+}
 
-    <input type="text" id="usage" class="form-control" placeholder="type here...">
-    <button class="btn btn-info" onclick="checkUsage()"></button>
+.container-box{
+    background:#1f2630;
+    width:500px;
+    margin:auto;
+    padding:25px;
+    border-radius:30px;
+}
+
+input{
+    width:200px;
+    display:inline-block;
+}
+
+button{
+    margin-left:10px;
+}
+</style>
+<body>
+
+
+    <h2>Electricity Consumption Classifier</h2>
+
+        <div class="container-box">
+        <label style="color:white; font-size:25px;">kWh</label>
+        <input type="number" id="usage" class="form-control d-inline">
+
+        <button class="btn btn-info" onclick="checkUsage()">Classify</button>
+    </div>
 
     <script>
         function checkUsage(){
 
-        var usage = document.getElementById("Usage").value;
+        let usage = Number(document.getElementById("usage").value);
 
         if (isNaN(usage) || age < 0 ){
             alert("Please input a valid number.")
         }
-        else if (0 < usage < 100){
+        else if(usage <= 100){
             alert("Lifeline Consumer: Discounted electricity rates.");
         }
-        else if (101 < usage < 200){
-            alert("Low Consumption: Normal residential rate.")
+
+        else if(usage <= 200){
+            alert("Low Consumption: Normal residential rate.");
         }
-        else if (201 < usage < 300){
+
+        else if(usage <= 300){
             alert("Average Consumption: Typical electricity usage.");
         }
-        else if (301 < usage < 500){
-            alert("High Consumption: Higher electricity usage.")
+
+        else if(usage <= 500){
+            alert("High Consumption: Higher electricity usage.");
         }
-        else if (500 < usage){
-            alert("High Consumption: Heavy electricit.")
+
+        else{
+            alert("Heavy Consumption: Very high electricity usage.");
         }
-        else {
-            alert("Your kWh usage could not be classified.");
-        }
-    }
-    </script>
+
+}
+
+</script>
 
 </body>
 </html>
