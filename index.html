@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>device-width>, initial-scale=1.0">
+    <title>Q4 Drill 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Electricity Consumption Classifier</h1>
+
+    <input type="text" id="usage" class="form-control" placeholder="type here...">
+    <button class="btn btn-info" onclick="checkUsage()"></button>
+
+    <script>
+        function checkUsage(){
+
+        var usage = document.getElementById("Usage").value;
+
+        if (isNaN(usage) || age < 0 ){
+            alert("Please input a valid number.")
+        }
+        else if (0 < usage < 100){
+            alert("Lifeline Consumer: Discounted electricity rates.");
+        }
+        else if (101 < usage < 200){
+            alert("Low Consumption: Normal residential rate.")
+        }
+        else if (201 < usage < 300){
+            alert("Average Consumption: Typical electricity usage.");
+        }
+        else if (301 < usage < 500){
+            alert("High Consumption: Higher electricity usage.")
+        }
+        else if (500 < usage){
+            alert("High Consumption: Heavy electricit.")
+        }
+        else {
+            alert("Your kWh usage could not be classified.");
+        }
+    }
+    </script>
+
+</body>
+</html>
